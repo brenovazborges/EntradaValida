@@ -1,41 +1,20 @@
-﻿int number;
-
-Console.WriteLine("---->ATIVIDADE DE 'ENTRADA VALIDA<----/n");
-InsertNumber();
-
-if (number ==0 )
-{
-    Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine("Operação cancelada :(");
-    Console.ResetColor();
-}
-
-else
-{
-    if (number <=9 )
+﻿    int resposta = 0;
+    do
     {
-        Console.WriteLine("Volte sempre! :)");
+        Console.Write("Digite um número entre 1 e 9 (ou 0 para cancelar): ");
+        resposta = Convert.ToInt32(Console.ReadLine());
     }
 
+    while(resposta < 0 || resposta > 10);
+    
+    if (resposta == 0)
+    {
+        Console.WriteLine("Operação cancelada");
+    }
+    
     else
     {
-        InsertNumber();
+        Console.WriteLine($"Número selecionado = {resposta}");
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-void InsertNumber()
-{
-    Console.Write("Digite um número entre 1 e 9 (ou 0 para cancelar)...:");
-    number = Convert.ToInt32(Console.ReadLine());
-}
+    
+    Console.WriteLine("Volte sempre."); 
